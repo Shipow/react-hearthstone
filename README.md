@@ -18,6 +18,8 @@ This will be a complete deck builder application, similar to [hearthstone-deckbu
 
 A list of cards, for example to represent a deck.
 
+Example: [Show a random deck for a random class](http://matkl.github.io/react-hearthstone/examples/components/CardList.html)
+
 ### CardGallery
 
 A gallery of cards using the game's card images. Not implemented yet.
