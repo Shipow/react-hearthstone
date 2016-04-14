@@ -1,4 +1,4 @@
-React Hearthstone
+react-hearthstone
 =================
 
 React Components for Blizzard's Hearthstone. WIP.
