@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
+<script src="/build/react-hearthstone.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+<link href="/build/style.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
+<h1>CardList Example</h1>
+<div id="content"></div>
+<script>
+
+$.get("https://api.hearthstonejson.com/v1/12105/enUS/cards.collectible.json", function(cards) {
+
+  function createRandomDeck(cards) {
+    var DECK_SIZE = 30;
+    var SAME_CARD_LIMIT = 2;
+    var PLAYER_CLASSES = ['DRUID', 'HUNTER', 'MAGE', 'PALADIN', 'PRIEST', 'ROGUE', 'SHAMAN', 'WARLOCK', 'WARRIOR'];
+    var playerClass = PLAYER_CLASSES[Math.floor(Math.random() * PLAYER_CLASSES.length)];
+    
+    console.log('Creating deck for class ' + playerClass);
+
+    var validCards = cards.filter(function(card) {
+      return !card.playerClass || card.playerClass == playerClass;
+    });
+
+    if (validCards.length == 0) return;
+
+    var deck = [];
+    var cardIds = [];
+    var numCards = 0;
+
+    while (numCards < DECK_SIZE) {
+      var randomCard = validCards[Math.floor(Math.random() * validCards.length)];
+
+      // don't include same card twice
+      if (cardIds.indexOf(randomCard.id) >= 0) continue;
+
+      if (deck.length < DECK_SIZE && randomCard.rarity != 'LEGENDARY') {
+        randomCard.count = Math.floor(Math.random() * SAME_CARD_LIMIT + 1);
+      } else {
+        randomCard.count = 1;
+      }
+
+      deck.push(randomCard);
+      cardIds.push(randomCard.id);
+      numCards += randomCard.count;
+    }
+
+    console.log(deck);
+
+    return deck;
+  }
+
+  function addImageUrlToCard(card) {
+    var CARD_IMAGES_URL_ROOT = 'http://wow.zamimg.com/images/hearthstone/cards/enus/medium/';
+    var CARD_IMAGES_EXTENSION = '.png';
+    card.imageUrl = CARD_IMAGES_URL_ROOT + card.id + CARD_IMAGES_EXTENSION;
+    console.log('IMG:', card.imageUrl);
+  }
+
+  var deck = createRandomDeck(cards);
+  deck.forEach(addImageUrlToCard);
+
+  ReactDOM.render(
+    React.createElement(reactHearthstone.CardList, {cards: deck}),
+    document.getElementById('content')
+  );
+});
+</script>
