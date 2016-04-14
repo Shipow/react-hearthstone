@@ -8,6 +8,42 @@ React components for Blizzard's Hearthstone. WIP.
 
 Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder)
 
+## Components
+
+### Deckbuilder
+
+This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not done yet.
+
+### CardList
+
+A list of cards, for example to represent a deck.
+
+### CardGallery
+
+A gallery of cards using the game's card images. Not implemented yet.
+
+## How To Use
+
+The react-hearthstone components can be used either in a React application or standalone.
+
+## React app
+
+### Installation
+
+Add `react-hearthstone` to your package:
+
+```
+npm install --save react-hearthstone
+```
+
+### Usage
+
+WIP
+
+## Standalone
+
+See [examples](https://github.com/matkl/react-hearthstone/tree/master/examples).
+
 ## Author
 
 **Matthias Klein**
