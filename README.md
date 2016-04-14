@@ -40,11 +40,11 @@ npm install --save react-hearthstone
 
 #### Usage
 
-WIP
+WIP. See [tests].
 
 ### Standalone
 
-See [examples](https://github.com/matkl/react-hearthstone/tree/master/examples).
+See [examples].
 
 ## Author
 
