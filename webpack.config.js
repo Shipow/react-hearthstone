@@ -8,7 +8,7 @@ module.exports = {
     library: 'reactHearthstone',
     path: path.join(__dirname, 'build'),
     filename: 'react-hearthstone.js',
-    publicPath: 'build/'
+    publicPath: 'http://matkl.github.io/react-hearthstone/build/'
   },
   externals: {
     'react': 'React'

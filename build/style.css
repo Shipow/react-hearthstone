@@ -10,8 +10,8 @@
   max-width: 250px;
 }
 .hs-CardListItem {
-  -webkit-animation: rotateIn 1s;
-          animation: rotateIn 1s;
+  -webkit-animation: hsRotateIn 1s;
+          animation: hsRotateIn 1s;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   background: #111;
@@ -93,108 +93,23 @@
   padding: 0 10px;
   text-align: center;
 }
-
-
-
-.deck {
-  background: #262626;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: auto;
-  padding: 0 16px;
-  width: 250px
-}
-.deck li.common {
-  color: #eee
-}
-.deck li.rare {
-  border-color: #005ab1
-}
-.deck li.rare .mana {
-  background: #005ab1
-}
-.deck li.epic {
-  border-color: #540b86
-}
-.deck li.epic .mana {
-  background: #8712d7
-}
-.deck li.legendary {
-  border-color: #804000
-}
-.deck li.legendary .mana {
-  background: #c60
-}
-.deck li:hover:after {
-  background: rgba(255, 255, 255, 0.1);
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%
-}
-.deck-header {
-  color: #ccc;
-  line-height: 40px;
-  border-bottom: 1px solid #383838;
-  padding: 0 8px;
-  text-align: center
-}
-
-@-webkit-keyframes fadeInRotateInY {
-  from {
-    opacity: 0;
-    -webkit-transform: perspective(1000px) rotateY(90deg);
-    transform: perspective(1000px) rotateY(90deg)
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: perspective(1000px) rotateY(0);
-    transform: perspective(1000px) rotateY(0)
-  }
-}
-
-@keyframes fadeInRotateInY {
-  from {
-    opacity: 0;
-    -webkit-transform: perspective(1000px) rotateY(90deg);
-    transform: perspective(1000px) rotateY(90deg)
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: perspective(1000px) rotateY(0);
-    transform: perspective(1000px) rotateY(0)
-  }
-}
 @-webkit-keyframes rotateIn {
   from {
     -webkit-transform: perspective(1000px) rotateX(90deg);
-    transform: perspective(1000px) rotateX(90deg)
+            transform: perspective(1000px) rotateX(90deg);
   }
   to {
     -webkit-transform: perspective(1000px) rotateX(0);
-    transform: perspective(1000px) rotateX(0)
+            transform: perspective(1000px) rotateX(0);
   }
 }
 @keyframes rotateIn {
   from {
     -webkit-transform: perspective(1000px) rotateX(90deg);
-    transform: perspective(1000px) rotateX(90deg)
+            transform: perspective(1000px) rotateX(90deg);
   }
   to {
     -webkit-transform: perspective(1000px) rotateX(0);
-    transform: perspective(1000px) rotateX(0)
+            transform: perspective(1000px) rotateX(0);
   }
 }
