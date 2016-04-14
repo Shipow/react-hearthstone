@@ -40,7 +40,7 @@ npm install --save react-hearthstone
 
 #### Usage
 
-WIP. See [tests](tests/).
+WIP. See [test](test/).
 
 ### Standalone
 
