@@ -26,9 +26,9 @@ A gallery of cards using the game's card images. Not implemented yet.
 
 The react-hearthstone components can be used either in a React application or standalone.
 
-## React app
+### React app
 
-### Installation
+#### Installation
 
 Add `react-hearthstone` to your package:
 
@@ -36,11 +36,11 @@ Add `react-hearthstone` to your package:
 npm install --save react-hearthstone
 ```
 
-### Usage
+#### Usage
 
 WIP
 
-## Standalone
+### Standalone
 
 See [examples](https://github.com/matkl/react-hearthstone/tree/master/examples).
 
