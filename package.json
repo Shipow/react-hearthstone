@@ -9,7 +9,7 @@
     "webpack": "webpack --verbose --colors --display-error-details",
     "webpack-dev-server": "webpack-dev-server --watch-poll",
     "postcss": "postcss --use autoprefixer src/stylesheets/*.css -d build/",
-    "postcss:watch": "postcss -w --use autoprefixer *.css -d build/",
+    "postcss:watch": "postcss -w --use autoprefixer src/stylesheets/*.css -d build/",
     "build": "npm test && npm run babel && npm run postcss && npm run webpack"
   },
   "repository": {
