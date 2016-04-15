@@ -10,7 +10,7 @@ Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuil
 
 ## Components
 
-### Deckbuilder
+### DeckBuilder
 
 This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not done yet.
 
@@ -28,9 +28,7 @@ A gallery of cards using the game's card images. Not implemented yet.
 
 The react-hearthstone components can be used either in a React application or standalone.
 
-### React app
-
-#### Installation
+### npm
 
 Add `react-hearthstone` to your package:
 
@@ -38,11 +36,9 @@ Add `react-hearthstone` to your package:
 npm install --save react-hearthstone
 ```
 
-#### Usage
+See [test](test/) for details.
 
-WIP. See [test](test/).
-
-### Standalone
+### Browser
 
 See [examples](examples/).
 
