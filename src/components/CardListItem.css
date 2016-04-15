@@ -1,0 +1,77 @@
+.hs-CardListItem {
+  animation: hsCardListItemRotateIn 1s;
+  backface-visibility: hidden;
+  background: #111;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
+  box-sizing: border-box;
+  color: #eee;
+  cursor: default;
+  display: block;
+  line-height: 30px;
+  margin: 0;
+  margin-bottom: 2px;
+  position: relative;
+}
+.hs-CardListItem_rare .hs-CardListItem__cost {
+  background: #005ab1;
+}
+.hs-CardListItem_epic .hs-CardListItem__cost {
+  background: #8712d7;
+}
+.hs-CardListItem_legendary .hs-CardListItem__cost {
+  background: #c60;
+}
+.hs-CardListItem__image {
+  background-position: 50% 25%;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 0;
+  width: 50%;
+}
+.hs-CardListItem__image:after {
+  background-image: linear-gradient(90deg, #111, transparent);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.hs-CardListItem__content {
+  display: flex;
+  position: relative;
+}
+.hs-CardListItem__cost {
+  background: #535353;
+  box-sizing: border-box;
+  color: #fff;
+  flex: 0 0 auto;
+  text-align: center;
+  width: 30px;
+}
+.hs-CardListItem__name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hs-CardListItem__count {
+  background: #333;
+  box-sizing: border-box;
+  color: #ffd700;
+  flex: 0 0 auto;
+  min-width: 30px;
+  padding: 0 10px;
+  text-align: center;
+}
+@keyframes hsCardListItemRotateIn {
+  from {
+    transform: perspective(1000px) rotateX(90deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(0);
+  }
+}

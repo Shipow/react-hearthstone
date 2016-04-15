@@ -1,3 +1,5 @@
+require('./CardListItem.css');
+
 import React from 'react';
 
 const CardListItem = (props) => 

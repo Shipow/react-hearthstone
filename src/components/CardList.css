@@ -1,0 +1,8 @@
+.hs-CardList {
+  flex: 1 1 auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+  max-width: 250px;
+}
