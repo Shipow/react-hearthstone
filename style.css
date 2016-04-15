@@ -75,7 +75,7 @@
   padding: 0 10px;
   text-align: center;
 }
-@keyframes rotateIn {
+@keyframes hsRotateIn {
   from {
     transform: perspective(1000px) rotateX(90deg);
   }
