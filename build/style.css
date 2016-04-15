@@ -93,7 +93,7 @@
   padding: 0 10px;
   text-align: center;
 }
-@-webkit-keyframes rotateIn {
+@-webkit-keyframes hsRotateIn {
   from {
     -webkit-transform: perspective(1000px) rotateX(90deg);
             transform: perspective(1000px) rotateX(90deg);
@@ -103,7 +103,7 @@
             transform: perspective(1000px) rotateX(0);
   }
 }
-@keyframes rotateIn {
+@keyframes hsRotateIn {
   from {
     -webkit-transform: perspective(1000px) rotateX(90deg);
             transform: perspective(1000px) rotateX(90deg);
