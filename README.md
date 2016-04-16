@@ -22,7 +22,9 @@ Example: [Show a random deck for a random class](http://matkl.github.io/react-he
 
 ### CardGallery
 
-A gallery of cards using the game's card images. Not usable yet.
+A gallery of cards using the game's card images.
+
+Example: [Show a gallery of 30 random cards](http://matkl.github.io/react-hearthstone/examples/components/CardGallery.html)
 
 ## How To Use
 

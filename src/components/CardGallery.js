@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import CardGalleryItem from './CardGalleryItem';
+import './CardGallery.css';
 
 export default class CardGallery extends Component {
   render() {

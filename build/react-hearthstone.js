@@ -56,7 +56,7 @@ var reactHearthstone =
 	
 	var _CardGallery2 = _interopRequireDefault(_CardGallery);
 	
-	var _CardList = __webpack_require__(4);
+	var _CardList = __webpack_require__(10);
 	
 	var _CardList2 = _interopRequireDefault(_CardList);
 	
@@ -86,6 +86,8 @@ var reactHearthstone =
 	var _CardGalleryItem = __webpack_require__(3);
 	
 	var _CardGalleryItem2 = _interopRequireDefault(_CardGalleryItem);
+	
+	__webpack_require__(8);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -147,6 +149,8 @@ var reactHearthstone =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	__webpack_require__(4);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var CardGalleryItem = function CardGalleryItem(props) {
@@ -161,6 +165,22 @@ var reactHearthstone =
 
 /***/ },
 /* 4 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 9 */,
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -177,11 +197,11 @@ var reactHearthstone =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _CardListItem = __webpack_require__(5);
+	var _CardListItem = __webpack_require__(11);
 	
 	var _CardListItem2 = _interopRequireDefault(_CardListItem);
 	
-	__webpack_require__(10);
+	__webpack_require__(14);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -233,7 +253,7 @@ var reactHearthstone =
 	};
 
 /***/ },
-/* 5 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -246,7 +266,7 @@ var reactHearthstone =
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(6);
+	__webpack_require__(12);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -280,16 +300,14 @@ var reactHearthstone =
 	exports.default = CardListItem;
 
 /***/ },
-/* 6 */
+/* 12 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 13 */,
+/* 14 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

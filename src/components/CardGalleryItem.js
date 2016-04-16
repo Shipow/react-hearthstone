@@ -1,4 +1,5 @@
 import React from 'react';
+import './CardGalleryItem.css';
 
 const CardGalleryItem = props =>
   <li className={'hs-CardGalleryItem' + (props.rarity ? ' hs-CardListItem_' + props.rarity.toLowerCase() : '')}>

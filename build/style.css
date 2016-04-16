@@ -1,3 +1,19 @@
+.hs-CardGallery {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 .hs-CardListItem {
   -webkit-animation: hs-CardListItemRotateIn 1s;
           animation: hs-CardListItemRotateIn 1s;
