@@ -1,6 +1,5 @@
-require('./CardListItem.css');
-
 import React from 'react';
+import './CardListItem.css';
 
 const CardListItem = (props) => 
   <li className={'hs-CardListItem' + (props.rarity ? ' hs-CardListItem_' + props.rarity.toLowerCase() : '')}>

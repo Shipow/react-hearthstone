@@ -1,7 +1,6 @@
-require('./CardList.css');
-
 import React, {Component, PropTypes} from 'react';
 import CardListItem from './CardListItem';
+import './CardList.css';
 
 export default class CardList extends Component {
   render() {
