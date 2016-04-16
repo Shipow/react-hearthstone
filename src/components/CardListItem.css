@@ -1,5 +1,5 @@
 .hs-CardListItem {
-  animation: hsCardListItemRotateIn 1s;
+  animation: hs-CardListItemRotateIn 1s;
   backface-visibility: hidden;
   background: #111;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
@@ -11,6 +11,10 @@
   margin: 0;
   margin-bottom: 2px;
   position: relative;
+}
+.hs-CardListItem_free .hs-CardListItem__cost {
+}
+.hs-CardListItem_common .hs-CardListItem__cost {
 }
 .hs-CardListItem_rare .hs-CardListItem__cost {
   background: #005ab1;
@@ -67,7 +71,7 @@
   padding: 0 10px;
   text-align: center;
 }
-@keyframes hsCardListItemRotateIn {
+@keyframes hs-CardListItemRotateIn {
   from {
     transform: perspective(1000px) rotateX(90deg);
   }
