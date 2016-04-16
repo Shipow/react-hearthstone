@@ -10,7 +10,7 @@
     "webpack-dev-server": "webpack-dev-server --watch-poll",
     "postcss": "postcss --use autoprefixer src/stylesheets/*.css -d build/",
     "postcss:watch": "postcss -w --use autoprefixer src/stylesheets/*.css -d build/",
-    "build": "npm test && npm run babel && npm run postcss && npm run webpack"
+    "build": "npm run babel && npm run postcss && npm run webpack"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "ignore-styles": "^1.2.0",
     "mocha": "^2.4.5",
     "postcss-cli": "^2.5.1",
