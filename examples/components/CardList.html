@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
@@ -12,7 +13,6 @@
 <script>
 
 $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", function(cards) {
-
   function createRandomDeck(cards) {
     var DECK_SIZE = 30;
     var SAME_CARD_LIMIT = 2;
@@ -25,7 +25,8 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
       return !card.playerClass || card.playerClass == playerClass;
     });
 
-    if (validCards.length == 0) return;
+    // make sure deck size is large enough to avoid an infinite loop
+    if (validCards.length < DECK_SIZE) return;
 
     var deck = [];
     var cardIds = [];
@@ -37,6 +38,7 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
       // don't include same card twice
       if (cardIds.indexOf(randomCard.id) >= 0) continue;
 
+      // legendaries are unique
       if (deck.length < DECK_SIZE && randomCard.rarity != 'LEGENDARY') {
         randomCard.count = Math.floor(Math.random() * SAME_CARD_LIMIT + 1);
       } else {
