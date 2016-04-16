@@ -4,9 +4,18 @@ import './CardList.css';
 
 export default class CardList extends Component {
   render() {
+    function sortByCostAndName(a, b) {
+      if (a.cost == b.cost) {
+        return a.name.localeCompare(b.name);
+      }
+      return a.cost - b.cost;
+    }
+
+    const cards = this.props.cards.sort(sortByCostAndName);
+
     return (
       <ul className="hs-CardList">
-        {this.props.cards.map(function(card) {
+        {cards.map(function(card) {
           return <CardListItem key={card.id} {...card} />
         })}
       </ul>
