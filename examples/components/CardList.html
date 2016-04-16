@@ -25,7 +25,7 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
       return !card.playerClass || card.playerClass == playerClass;
     });
 
-    // make sure deck size is large enough to avoid an infinite loop
+    // make sure there are enough cards to avoid an infinite loop
     if (validCards.length < DECK_SIZE) return;
 
     var deck = [];
@@ -59,7 +59,6 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
     var CARD_IMAGES_URL_ROOT = 'http://wow.zamimg.com/images/hearthstone/cards/enus/medium/';
     var CARD_IMAGES_EXTENSION = '.png';
     card.imageUrl = CARD_IMAGES_URL_ROOT + card.id + CARD_IMAGES_EXTENSION;
-    console.log('IMG:', card.imageUrl);
   }
 
   var deck = createRandomDeck(cards);
