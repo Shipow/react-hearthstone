@@ -203,10 +203,19 @@ var reactHearthstone =
 	  _createClass(CardList, [{
 	    key: 'render',
 	    value: function render() {
+	      function sortByCostAndName(a, b) {
+	        if (a.cost == b.cost) {
+	          return a.name.localeCompare(b.name);
+	        }
+	        return a.cost - b.cost;
+	      }
+	
+	      var cards = this.props.cards.sort(sortByCostAndName);
+	
 	      return _react2.default.createElement(
 	        'ul',
 	        { className: 'hs-CardList' },
-	        this.props.cards.map(function (card) {
+	        cards.map(function (card) {
 	          return _react2.default.createElement(_CardListItem2.default, _extends({ key: card.id }, card));
 	        })
 	      );
