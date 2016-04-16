@@ -12,7 +12,7 @@ Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuil
 
 ### DeckBuilder
 
-This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not done yet.
+This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not implemented yet.
 
 ### CardList
 
@@ -22,7 +22,7 @@ Example: [Show a random deck for a random class](http://matkl.github.io/react-he
 
 ### CardGallery
 
-A gallery of cards using the game's card images. Not implemented yet.
+A gallery of cards using the game's card images. Not usable yet.
 
 ## How To Use
 
