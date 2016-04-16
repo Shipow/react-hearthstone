@@ -1,19 +1,6 @@
-.hs-CardList {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding-top: 8px;
-  max-width: 250px;
-}
 .hs-CardListItem {
-  -webkit-animation: hsRotateIn 1s;
-          animation: hsRotateIn 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  animation: hs-CardListItemRotateIn 1s;
+  backface-visibility: hidden;
   background: #111;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
   box-sizing: border-box;
@@ -24,6 +11,10 @@
   margin: 0;
   margin-bottom: 2px;
   position: relative;
+}
+.hs-CardListItem_free .hs-CardListItem__cost {
+}
+.hs-CardListItem_common .hs-CardListItem__cost {
 }
 .hs-CardListItem_rare .hs-CardListItem__cost {
   background: #005ab1;
@@ -44,7 +35,6 @@
   width: 50%;
 }
 .hs-CardListItem__image:after {
-  background-image: -webkit-linear-gradient(left, #111, transparent);
   background-image: linear-gradient(90deg, #111, transparent);
   content: '';
   height: 100%;
@@ -54,9 +44,6 @@
   width: 100%;
 }
 .hs-CardListItem__content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -64,18 +51,12 @@
   background: #535353;
   box-sizing: border-box;
   color: #fff;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   text-align: center;
   width: 30px;
 }
 .hs-CardListItem__name {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  flex: 1 1 auto;
   overflow: hidden;
   padding: 0 10px;
   text-overflow: ellipsis;
@@ -85,31 +66,26 @@
   background: #333;
   box-sizing: border-box;
   color: #ffd700;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
+  flex: 0 0 auto;
   min-width: 30px;
   padding: 0 10px;
   text-align: center;
 }
-@-webkit-keyframes hsRotateIn {
+@keyframes hs-CardListItemRotateIn {
   from {
-    -webkit-transform: perspective(1000px) rotateX(90deg);
-            transform: perspective(1000px) rotateX(90deg);
+    transform: perspective(1000px) rotateX(90deg);
   }
   to {
-    -webkit-transform: perspective(1000px) rotateX(0);
-            transform: perspective(1000px) rotateX(0);
+    transform: perspective(1000px) rotateX(0);
   }
 }
-@keyframes hsRotateIn {
-  from {
-    -webkit-transform: perspective(1000px) rotateX(90deg);
-            transform: perspective(1000px) rotateX(90deg);
-  }
-  to {
-    -webkit-transform: perspective(1000px) rotateX(0);
-            transform: perspective(1000px) rotateX(0);
-  }
+.hs-CardList {
+  flex: 1 1 auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 8px;
+  max-width: 250px;
 }
+
+/*# sourceMappingURL=style.css.map*/
