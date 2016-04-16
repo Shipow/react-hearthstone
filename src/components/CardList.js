@@ -15,9 +15,7 @@ export default class CardList extends Component {
 
     return (
       <ul className="hs-CardList">
-        {cards.map(function(card) {
-          return <CardListItem key={card.id} {...card} />
-        })}
+        {cards.map((card) => <CardListItem key={card.id} {...card} />)}
       </ul>
     );
   }
