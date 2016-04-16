@@ -8,9 +8,7 @@
     "babel": "babel ./src --out-dir ./lib",
     "webpack": "webpack --verbose --colors --display-error-details",
     "webpack-dev-server": "webpack-dev-server --watch-poll",
-    "postcss": "postcss --use autoprefixer src/stylesheets/*.css -d build/",
-    "postcss:watch": "postcss -w --use autoprefixer src/stylesheets/*.css -d build/",
-    "build": "npm run babel && npm run postcss && npm run webpack"
+    "build": "npm run babel && npm run webpack"
   },
   "repository": {
     "type": "git",
@@ -40,6 +38,7 @@
     "ignore-styles": "^1.2.0",
     "mocha": "^2.4.5",
     "postcss-cli": "^2.5.1",
+    "postcss-loader": "^0.8.2",
     "react-addons-test-utils": "^15.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.15",

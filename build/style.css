@@ -1,6 +1,8 @@
 .hs-CardListItem {
-  animation: hs-CardListItemRotateIn 1s;
-  backface-visibility: hidden;
+  -webkit-animation: hs-CardListItemRotateIn 1s;
+          animation: hs-CardListItemRotateIn 1s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   background: #111;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.24);
   box-sizing: border-box;
@@ -35,6 +37,7 @@
   width: 50%;
 }
 .hs-CardListItem__image:after {
+  background-image: -webkit-linear-gradient(left, #111, transparent);
   background-image: linear-gradient(90deg, #111, transparent);
   content: '';
   height: 100%;
@@ -44,6 +47,9 @@
   width: 100%;
 }
 .hs-CardListItem__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -51,12 +57,18 @@
   background: #535353;
   box-sizing: border-box;
   color: #fff;
-  flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   text-align: center;
   width: 30px;
 }
 .hs-CardListItem__name {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   overflow: hidden;
   padding: 0 10px;
   text-overflow: ellipsis;
@@ -66,21 +78,39 @@
   background: #333;
   box-sizing: border-box;
   color: #ffd700;
-  flex: 0 0 auto;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   min-width: 30px;
   padding: 0 10px;
   text-align: center;
 }
-@keyframes hs-CardListItemRotateIn {
+@-webkit-keyframes hs-CardListItemRotateIn {
   from {
-    transform: perspective(1000px) rotateX(90deg);
+    -webkit-transform: perspective(1000px) rotateX(90deg);
+            transform: perspective(1000px) rotateX(90deg);
   }
   to {
-    transform: perspective(1000px) rotateX(0);
+    -webkit-transform: perspective(1000px) rotateX(0);
+            transform: perspective(1000px) rotateX(0);
+  }
+}
+@keyframes hs-CardListItemRotateIn {
+  from {
+    -webkit-transform: perspective(1000px) rotateX(90deg);
+            transform: perspective(1000px) rotateX(90deg);
+  }
+  to {
+    -webkit-transform: perspective(1000px) rotateX(0);
+            transform: perspective(1000px) rotateX(0);
   }
 }
 .hs-CardList {
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   list-style-type: none;
   margin: 0;
   padding: 0;
