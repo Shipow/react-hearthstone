@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import './CardListItem.css';
 
 const CardListItem = (props) => 
@@ -10,5 +10,13 @@ const CardListItem = (props) =>
       {props.count && props.count > 1 ? <div className="hs-CardListItem__count">{props.count}</div> : null}
     </div>
   </li>
+
+CardListItem.propTypes = {
+  rarity: PropTypes.string,
+  imageUrl: PropTypes.string,
+  cost: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  count: PropTypes.number
+};
 
 export default CardListItem;
