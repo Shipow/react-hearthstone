@@ -7,9 +7,10 @@ import EX1_116 from './cards/EX1_116.json';
 describe('CardListItem', function() {
   const card = EX1_116;
 
-  it('should render a card', function() {
+  it('renders a card', function() {
     const renderer = ReactTestUtils.createRenderer();
     renderer.render(<CardListItem {...card} />)
     const result = renderer.getRenderOutput();
+    expect(result.props.className).to.equal('hs-CardListItem hs-CardListItem_legendary');
   });
 });

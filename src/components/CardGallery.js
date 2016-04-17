@@ -6,12 +6,15 @@ export default class CardGallery extends Component {
   render() {
     return (
       <ul className="hs-CardGallery">
-        {this.props.cards.map(card => <CardGalleryItem key={card.id} {...card} />)}
+        {this.props.cards.map(
+          card => <CardGalleryItem key={card.id} {...card} onClick={this.props.onClick ? this.props.onClick.bind(this, card) : null} />
+        )}
       </ul>
     );
   }
 }
 
 CardGallery.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.array.isRequired,
+  onClick: PropTypes.func
 };
