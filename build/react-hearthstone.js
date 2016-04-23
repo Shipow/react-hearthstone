@@ -234,6 +234,8 @@ var reactHearthstone =
 	  _createClass(CardList, [{
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      var itemsById = {};
 	
 	      this.props.cards.forEach(function (card) {
@@ -261,7 +263,7 @@ var reactHearthstone =
 	        'ul',
 	        { className: 'hs-CardList' },
 	        sortedItems.map(function (item) {
-	          return _react2.default.createElement(_CardListItem2.default, { key: item.card.id, card: item.card, count: item.count });
+	          return _react2.default.createElement(_CardListItem2.default, { key: item.card.id, card: item.card, count: item.count, onClick: _this2.props.onClick ? _this2.props.onClick.bind(_this2, item.card) : null });
 	        })
 	      );
 	    }
@@ -298,7 +300,7 @@ var reactHearthstone =
 	var CardListItem = function CardListItem(props) {
 	  return _react2.default.createElement(
 	    'li',
-	    { className: 'hs-CardListItem' + (props.card.rarity ? ' hs-CardListItem_' + props.card.rarity.toLowerCase() : '') },
+	    { className: 'hs-CardListItem' + (props.card.rarity ? ' hs-CardListItem_' + props.card.rarity.toLowerCase() : ''), onClick: props.onClick },
 	    _react2.default.createElement('div', { className: 'hs-CardListItem__image', style: { backgroundImage: 'url(' + props.card.imageUrl + ')' } }),
 	    _react2.default.createElement(
 	      'div',
@@ -399,6 +401,7 @@ var reactHearthstone =
 	      deck: []
 	    };
 	    _this.addCardToDeck = _this.addCardToDeck.bind(_this);
+	    _this.removeCardFromDeck = _this.removeCardFromDeck.bind(_this);
 	    return _this;
 	  }
 	
@@ -409,6 +412,7 @@ var reactHearthstone =
 	        cards.forEach(function (card) {
 	          card.imageUrl = 'http://wow.zamimg.com/images/hearthstone/cards/enus/medium/' + card.id + '.png';
 	        });
+	
 	        this.setState({ cards: cards });
 	      }.bind(this));
 	    }
@@ -416,6 +420,23 @@ var reactHearthstone =
 	    key: 'addCardToDeck',
 	    value: function addCardToDeck(card) {
 	      this.setState({ deck: this.state.deck.concat(card) });
+	    }
+	  }, {
+	    key: 'removeCardFromDeck',
+	    value: function removeCardFromDeck(card) {
+	      var cardId = card.id;
+	      var found = false;
+	
+	      // remove first occurence of the card
+	      var deck = this.state.deck.filter(function (card, index) {
+	        if (!found && card.id == cardId) {
+	          found = true;
+	          return false;
+	        }
+	        return true;
+	      });
+	
+	      this.setState({ deck: deck });
 	    }
 	  }, {
 	    key: 'render',
@@ -431,7 +452,7 @@ var reactHearthstone =
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'hs-DeckBuilder__deck' },
-	          _react2.default.createElement(_CardList2.default, { cards: this.state.deck })
+	          _react2.default.createElement(_CardList2.default, { cards: this.state.deck, onClick: this.removeCardFromDeck })
 	        )
 	      );
 	    }
