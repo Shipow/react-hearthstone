@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import './CardListItem.css';
 
 const CardListItem = (props) => 
-  <li className={'hs-CardListItem' + (props.card.rarity ? ' hs-CardListItem_' + props.card.rarity.toLowerCase() : '')}>
+  <li className={'hs-CardListItem' + (props.card.rarity ? ' hs-CardListItem_' + props.card.rarity.toLowerCase() : '')} onClick={props.onClick}>
     <div className="hs-CardListItem__image" style={{backgroundImage: 'url(' + props.card.imageUrl + ')'}} />
     <div className="hs-CardListItem__content">
       <div className="hs-CardListItem__cost">{props.card.cost}</div>
