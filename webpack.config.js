@@ -7,9 +7,9 @@ module.exports = {
   output: {
     libraryTarget: 'var',
     library: 'reactHearthstone',
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, 'dist'),
     filename: 'react-hearthstone.js',
-    publicPath: '/react-hearthstone/build/'
+    publicPath: '/react-hearthstone/dist/'
   },
   externals: {
     'react': 'React',
