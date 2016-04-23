@@ -42,7 +42,7 @@ See [test](test/) for details.
 
 ### Browser
 
-See [examples](examples/).
+See [examples](docs/examples/).
 
 ## Development
 
