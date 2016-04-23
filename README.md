@@ -12,7 +12,7 @@ Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuil
 
 ### DeckBuilder
 
-This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not implemented yet.
+This will be a complete deck builder application, similar to [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder) and based on the other components. Not usable yet.
 
 ### CardList
 

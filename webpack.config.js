@@ -12,7 +12,8 @@ module.exports = {
     publicPath: '/react-hearthstone/build/'
   },
   externals: {
-    'react': 'React'
+    'react': 'React',
+    'jquery': '$'
   },
   module: {
     loaders: [

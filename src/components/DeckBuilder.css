@@ -1,0 +1,14 @@
+.hs-DeckBuilder {
+  display: flex;
+}
+.hs-DeckBuilder__collection {
+  flex: 1 1 auto;
+  overflow: auto;
+  overflow-y: scroll;
+}
+.hs-DeckBuilder__deck {
+  background: #262626;
+  flex: 0 0 auto;
+  padding: 0 16px;
+  width: 240px;
+}
