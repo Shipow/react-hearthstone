@@ -40,17 +40,18 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
 
       // legendaries are unique
       if (deck.length < DECK_SIZE && randomCard.rarity != 'LEGENDARY') {
-        randomCard.count = Math.floor(Math.random() * SAME_CARD_LIMIT + 1);
-      } else {
-        randomCard.count = 1;
+        var count = 1;
+
+        for (var i = 0; i < Math.floor(Math.random() * SAME_CARD_LIMIT); i++) {
+          count += 1;
+          deck.push(randomCard);
+        }
       }
 
       deck.push(randomCard);
       cardIds.push(randomCard.id);
-      numCards += randomCard.count;
+      numCards += count;
     }
-
-    console.log(deck);
 
     return deck;
   }
