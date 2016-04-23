@@ -44,6 +44,14 @@ See [test](test/) for details.
 
 See [examples](examples/).
 
+## Development
+
+Use webpack-dev-server:
+
+```
+npm run webpack-dev-server
+```
+
 ## Author
 
 **Matthias Klein**
