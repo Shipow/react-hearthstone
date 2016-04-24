@@ -4,9 +4,16 @@ import './CardGallery.css';
 
 export default class CardGallery extends Component {
   render() {
+    const sortedCards = this.props.cards.sort(function sortByCostAndName(a, b) {
+      if (a.cost == b.cost) {
+        return a.name.localeCompare(b.name);
+      }
+      return a.cost - b.cost;
+    });
+
     return (
       <ul className="hs-CardGallery">
-        {this.props.cards.map(
+        {sortedCards.map(
           card => <CardGalleryItem key={card.id} card={card} onClick={this.props.onClick ? this.props.onClick.bind(this, card) : null} />
         )}
       </ul>
