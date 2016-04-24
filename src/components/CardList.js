@@ -29,8 +29,8 @@ export default class CardList extends Component {
 
     return (
       <ul className="hs-CardList">
-        {sortedItems.map((item) =>
-          <CardListItem key={item.card.id} card={item.card} count={item.count} onClick={this.props.onClick ? this.props.onClick.bind(this, item.card) : null} />
+        {sortedItems.map(
+          item => <CardListItem key={item.card.id} card={item.card} count={item.count} onClick={this.props.onClick ? this.props.onClick.bind(this, item.card) : null} />
         )}
       </ul>
     );
@@ -38,5 +38,6 @@ export default class CardList extends Component {
 }
 
 CardList.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.array.isRequired,
+  onClick: PropTypes.func
 };
