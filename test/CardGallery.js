@@ -1,20 +1,29 @@
-import { expect } from 'chai';
 import React from 'react';
-import ReactTestUtils from 'react-addons-test-utils';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
 import CardGallery from '../src/components/CardGallery';
-import EX1_116 from './cards/EX1_116.json';
+import collectibleCards from './hearthstonejson/cards.collectible.json';
 
 describe('CardGallery', function() {
-  const cards = [ EX1_116, EX1_116 ];
-  const renderer = ReactTestUtils.createRenderer();
-  let result;
-
-  beforeEach(function() {
-    renderer.render(<CardGallery cards={cards} />)
-    result = renderer.getRenderOutput();
+  it('renders', function() {
+    const cards = collectibleCards.slice(0, 2);
+    const wrapper = shallow(<CardGallery cards={cards} />);
+    expect(wrapper.hasClass('hs-CardList')).to.be.true;
   });
 
   it('renders a list of cards', function() {
-    expect(result.props.children.length).to.equal(cards.length);
+    const cards = collectibleCards.slice(0, 2);
+    const wrapper = shallow(<CardGallery cards={cards} />);
+    expect(wrapper.children()).to.have.length(cards.length);
+  });
+
+  it('is sorted by mana cost', function() {
+    const cards = [
+      { id: 'firstCard', name: 'Card that costs 2', cost: 2 },
+      { id: 'secondCard', name: 'Card that costs 1', cost: 1 }
+    ];
+    const wrapper = shallow(<CardGallery cards={cards} />);
+    expect(wrapper.childAt(0).prop('cost') == cards[1].cost);
+    expect(wrapper.childAt(1).prop('cost') == cards[0].cost);
   });
 });
