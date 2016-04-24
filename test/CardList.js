@@ -24,7 +24,6 @@ describe('CardList', function() {
       { id: 'secondCard', name: 'Card that costs 1', cost: 1 }
     ];
     const wrapper = shallow(<CardList cards={cards} />);
-    expect(wrapper.childAt(0).prop('cost') == cards[1].cost);
-    expect(wrapper.childAt(1).prop('cost') == cards[0].cost);
+    expect(wrapper.childAt(0).prop('card').cost).lte(wrapper.childAt(1).prop('card').cost);
   });
 });
