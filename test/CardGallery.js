@@ -8,7 +8,7 @@ describe('CardGallery', function() {
   it('renders', function() {
     const cards = collectibleCards.slice(0, 2);
     const wrapper = shallow(<CardGallery cards={cards} />);
-    expect(wrapper.hasClass('hs-CardList')).to.be.true;
+    expect(wrapper.hasClass('hs-CardGallery')).to.be.true;
   });
 
   it('renders a list of cards', function() {
