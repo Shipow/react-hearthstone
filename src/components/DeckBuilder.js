@@ -12,6 +12,7 @@ function capitalize(str) {
 export default class DeckBuilder extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       cards: [],
       deck: [],
@@ -23,7 +24,7 @@ export default class DeckBuilder extends Component {
     this.showNeutralCards = this.showNeutralCards.bind(this);
   }
   componentDidMount() {
-    $.get('https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json', function(cards) {
+    this.serverRequest = $.get('https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json', function(cards) {
       cards.forEach(function(card) {
         card.imageUrl = 'http://wow.zamimg.com/images/hearthstone/cards/enus/medium/' + card.id + '.png';
       });
@@ -31,7 +32,17 @@ export default class DeckBuilder extends Component {
       this.setState({ cards: cards });
     }.bind(this));
   }
+  componentWillUmount() {
+    this.serverRequest.abort();
+  }
   addCardToDeck(card) {
+    if (this.state.deck.length >= this.props.deckSize) return;
+
+    if (card.rarity) {
+      let duplicates = this.state.deck.filter(deckCard => deckCard.id == card.id);
+      if (duplicates.length >= this.props.deckLimits[card.rarity]) return;
+    }
+
     this.setState({ deck: this.state.deck.concat(card) });
   }
   removeCardFromDeck(card) {
@@ -91,5 +102,24 @@ export default class DeckBuilder extends Component {
 }
 
 DeckBuilder.propTypes = {
-  playerClass: PropTypes.string.isRequired
+  playerClass: PropTypes.string.isRequired,
+  deckSize: PropTypes.number.isRequired,
+  deckLimits: PropTypes.shape({
+    FREE: PropTypes.number.isRequired,
+    COMMON: PropTypes.number.isRequired,
+    RARE: PropTypes.number.isRequired,
+    EPIC: PropTypes.number.isRequired,
+    LEGENDARY: PropTypes.number.isRequired
+  })
+};
+
+DeckBuilder.defaultProps = {
+  deckSize: 30,
+  deckLimits: {
+    FREE: 2,
+    COMMON: 2,
+    RARE: 2,
+    EPIC: 2,
+    LEGENDARY: 1
+  }
 };
