@@ -75,8 +75,8 @@ export default class DeckBuilder extends Component {
       <div className="hs-DeckBuilder">
         <div className="hs-DeckBuilder__header">
           <div className="hs-DeckBuilder__pages">
-            <a onClick={this.showClassCards}>{capitalize(this.props.playerClass.toLowerCase())}</a>
-            <a onClick={this.showNeutralCards}>Neutral</a>
+            <a className="hs-DeckBuilder__filter-player-class" onClick={this.showClassCards}>{capitalize(this.props.playerClass.toLowerCase())}</a>
+            <a className="hs-DeckBuilder__filter-neutral" onClick={this.showNeutralCards}>Neutral</a>
           </div>
         </div>
         <div className="hs-DeckBuilder__collection">
