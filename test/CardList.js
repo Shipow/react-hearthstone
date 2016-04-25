@@ -1,6 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
+import sinon from 'sinon';
 import CardList from '../src/components/CardList';
 import collectibleCards from './hearthstonejson/cards.collectible.json';
 
@@ -26,4 +27,12 @@ describe('CardList', function() {
     const wrapper = shallow(<CardList cards={cards} />);
     expect(wrapper.childAt(0).prop('card').cost).lte(wrapper.childAt(1).prop('card').cost);
   });
+
+  it('is clickable', function() {
+    const onClick = sinon.spy();
+    const cards = collectibleCards.slice(0, 2);
+    const wrapper = shallow(<CardList cards={cards} onClick={onClick} />);
+    wrapper.childAt(0).simulate('click');
+    expect(onClick.calledOnce).to.equal(true);
+  }); 
 });
