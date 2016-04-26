@@ -1,15 +1,10 @@
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
   output: {
-    libraryTarget: 'var',
-    library: 'reactHearthstone',
-    path: path.join(__dirname, 'dist'),
-    filename: 'react-hearthstone.js',
-    publicPath: '/react-hearthstone/dist/'
+    library: 'ReactHearthstone',
+    libraryTarget: 'umd'
   },
   externals: {
     'react': 'React',
