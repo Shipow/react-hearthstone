@@ -5,9 +5,9 @@ react-hearthstone
 [![Coverage Status](https://coveralls.io/repos/github/matkl/react-hearthstone/badge.svg?branch=master)](https://coveralls.io/github/matkl/react-hearthstone?branch=master)
 [![npm version](http://img.shields.io/npm/v/react-hearthstone.svg?style=flat)](https://npmjs.org/package/react-hearthstone "View this project on npm")
 
-React components for Blizzard's Hearthstone. WIP.
+React components for Blizzard's [Hearthstone](http://us.battle.net/hearthstone/en/). WIP.
 
-Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder)
+Based on [hearthstone-deckbuilder](https://github.com/matkl/hearthstone-deckbuilder). For use with card data from [HearthstoneJSON](https://hearthstonejson.com/).
 
 ## Components
 
@@ -27,31 +27,36 @@ A gallery of cards using the game's card images.
 
 Example: [Show a gallery of 30 random cards](http://matkl.github.io/react-hearthstone/examples/components/CardGallery.html)
 
-## How To Use
+## Installation
 
-The react-hearthstone components can be used either in a React application or standalone.
-
-### npm
-
-Add `react-hearthstone` to your package:
+Using [npm](https://www.npmjs.com/):
 
 ```
-npm install --save react-hearthstone
+$ npm install --save react-hearthstone
 ```
 
-See [test](test/) for details.
+Then with a module bundler like [webpack](https://webpack.github.io/) that supports either CommonJS or ES2015 modules, use as you would anything else:
 
-### Browser
+```js
+// using an ES6 transpiler, like babel
+import { DeckBuilder, CardGallery, CardList } from 'react-hearthstone';
 
-See [examples](docs/examples/).
-
-## Development
-
-Use webpack-dev-server:
-
+// not using an ES6 transpiler
+var DeckBuilder = require('react-hearthstone').DeckBuilder;
+var CardGallery = require('react-hearthstone').CardGallery;
+var CardList = require('react-hearthstone').CardList;
 ```
-npm run webpack-dev-server
+
+The UMD build is also available on [npmcdn](https://npmcdn.com):
+
+```html
+<script src="https://npmcdn.com/react-hearthstone/umd/ReactHearthstone.min.js"></script>
+<script src="https://npmcdn.com/react-hearthstone/umd/style.css"></script>
 ```
+
+You can find the library on `window.ReactRouter`.
+
+See [examples](examples/) and [test](test/) for details.
 
 ## Author
 
