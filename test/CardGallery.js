@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import CardGallery from '../src/components/CardGallery';
+import CardGallery from '../components/CardGallery';
 import collectibleCards from './hearthstonejson/cards.collectible.json';
 
 describe('CardGallery', function() {
