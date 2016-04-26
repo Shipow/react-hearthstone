@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import DeckBuilder from '../src/components/DeckBuilder';
+import DeckBuilder from '../components/DeckBuilder';
 import collectibleCards from './hearthstonejson/cards.collectible.json';
 
 describe('DeckBuilder', function() {

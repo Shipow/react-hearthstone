@@ -1,5 +1,5 @@
-import CardGallery from './components/CardGallery';
-import CardList from './components/CardList';
-import DeckBuilder from './components/DeckBuilder';
+import CardGallery from './CardGallery';
+import CardList from './CardList';
+import DeckBuilder from './DeckBuilder';
 
 export {CardGallery, CardList, DeckBuilder};

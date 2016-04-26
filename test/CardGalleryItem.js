@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import CardGalleryItem from '../src/components/CardGalleryItem';
+import CardGalleryItem from '../components/CardGalleryItem';
 import collectibleCards from './hearthstonejson/cards.collectible.json';
 
 describe('CardGalleryItem', function() {
