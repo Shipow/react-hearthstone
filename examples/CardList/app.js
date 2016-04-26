@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js"></script>
-<script src="/react-hearthstone/dist/react-hearthstone.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-<link href="/react-hearthstone/dist/style.css" rel="stylesheet">
-<link href="../style.css" rel="stylesheet">
-<title>CardList Example</title>
-<h1>CardList Example</h1>
-<div id="content"></div>
-<script>
+import { render } from 'react-dom';
+import $ from 'jquery';
+import { CardList } from 'react-hearthstone';
 
 $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", function(cards) {
   function createRandomDeck(cards) {
@@ -65,9 +55,5 @@ $.get("https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json", f
   var deck = createRandomDeck(cards);
   deck.forEach(addImageUrlToCard);
 
-  ReactDOM.render(
-    React.createElement(reactHearthstone.CardList, {cards: deck}),
-    document.getElementById('content')
-  );
+  render(<CardList cards={deck} />, document.getElementById('example'));
 });
-</script>
