@@ -2,7 +2,14 @@
   "name": "react-hearthstone",
   "version": "0.3.0",
   "description": "React Components for Hearthstone",
-  "main": "lib/index.js",
+  "files": [
+    "*.md",
+    "es6",
+    "lib",
+    "umd"
+  ],
+  "main": "lib/index",
+  "jsnext:main": "es6/index",
   "scripts": {
     "build": "npm run build-cjs && npm run build-es",
     "build-cjs": "rimraf lib && cross-env BABEL_ENV=cjs babel ./components -d lib",
@@ -11,12 +18,10 @@
     "build-min": "cross-env BABEL_ENV=cjs NODE_ENV=production webpack -p components/index.js umd/ReactHearthstone.min.js",
     "start": "cross-env BABEL_ENV=cjs node examples/server.js",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- --require ignore-styles --compilers js:babel-core/register",
-    "coveralls": "cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
+    "coveralls": "cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "prepublish": "npm run build && npm run build-umd && npm run build-min"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/matkl/react-hearthstone"
-  },
+  "repository": "matkl/react-hearthstone",
   "keywords": [
     "hearthstone",
     "deck builder",
@@ -43,10 +48,12 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "ignore-styles": "^1.2.0",
     "istanbul": "^1.0.0-alpha.2",
+    "jquery": "^2.2.3",
     "mocha": "^2.4.5",
     "mocha-lcov-reporter": "^1.2.0",
     "postcss-cli": "^2.5.1",
     "postcss-loader": "^0.8.2",
+    "react": "^15.0.1",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1",
     "rimraf": "^2.5.2",
@@ -55,7 +62,7 @@
     "webpack": "^1.12.15",
     "webpack-dev-server": "^1.14.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "jquery": "^2.2.3",
     "react": "^15.0.1"
   },
