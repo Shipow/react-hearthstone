@@ -54,7 +54,7 @@ The UMD build is also available on [npmcdn](https://npmcdn.com):
 <script src="https://npmcdn.com/react-hearthstone/umd/style.css"></script>
 ```
 
-You can find the library on `window.ReactRouter`.
+You can find the library on `window.ReactHearthstone`.
 
 See [examples](examples/) and [test](test/) for details.
 
