@@ -19,7 +19,8 @@
     "start": "cross-env BABEL_ENV=cjs node examples/server.js",
     "test": "istanbul cover ./node_modules/mocha/bin/_mocha -- --require ignore-styles --compilers js:babel-core/register",
     "coveralls": "cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
-    "prepublish": "npm run build && npm run build-umd && npm run build-min"
+    "prepublish": "npm run build && npm run build-umd && npm run build-min",
+    "postpublish": "git push && git push --tags"
   },
   "repository": "matkl/react-hearthstone",
   "keywords": [
