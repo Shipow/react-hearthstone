@@ -1,0 +1,27 @@
+.hs-CardGalleryPlaceholderItem {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 52px 22px 24px 20px;
+  position: absolute;
+  width: 200px;
+  height: 303px;
+}
+
+.hs-CardGalleryPlaceholderItem__content {
+  border-radius: 8px;
+  display: flex;
+  flex: 1 1 auto;
+  background: #dbdbdb;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hs-CardGalleryPlaceholderItem__name {
+  background: #aaa;
+  color: white;
+  font-weight: 700;
+  line-height: 1.6;
+  padding: 0.25em;
+  text-align: center;
+}

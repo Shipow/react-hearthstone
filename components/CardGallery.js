@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
+import LazyLoad from 'react-lazyload';
 import CardGalleryItem from './CardGalleryItem';
+import CardGalleryPlaceholderItem from './CardGalleryPlaceholderItem';
 import './CardGallery.css';
 
 export default class CardGallery extends Component {
@@ -13,9 +15,15 @@ export default class CardGallery extends Component {
 
     return (
       <ul className="hs-CardGallery">
-        {sortedCards.map(
-          card => <CardGalleryItem key={card.id} card={card} onClick={this.props.onClick ? this.props.onClick.bind(this, card) : null} />
-        )}
+        {sortedCards.map(card => {
+          const placeholder = <CardGalleryItem card={card} invisible onClick={this.props.onClick ? this.props.onClick.bind(this, card) : null} />
+
+          return (
+            <LazyLoad key={card.id} overflow once debounce={300} height={303} placeholder={placeholder}>
+              <CardGalleryItem card={card} onClick={this.props.onClick ? this.props.onClick.bind(this, card) : null} />
+            </LazyLoad>
+          );
+        })}
       </ul>
     );
   }

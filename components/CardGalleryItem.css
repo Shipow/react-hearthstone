@@ -1,0 +1,9 @@
+.hs-CardGalleryItem {
+  position: relative;
+  width: 200px;
+  height: 303px;
+}
+
+.hs-CardGalleryItem__image {
+  position: absolute;
+}
