@@ -24,14 +24,14 @@ describe('CardGallery', function() {
       { id: 'secondCard', name: 'Card that costs 1', cost: 1 }
     ];
     const wrapper = shallow(<CardGallery cards={cards} />);
-    expect(wrapper.childAt(0).prop('card').cost).lte(wrapper.childAt(1).prop('card').cost);
+    expect(wrapper.childAt(0).find('CardGalleryItem').prop('card').cost).lte(wrapper.childAt(1).find('CardGalleryItem').prop('card').cost);
   });
 
   it('is clickable', function() {
     const onClick = sinon.spy();
     const cards = collectibleCards.slice(0, 2);
     const wrapper = shallow(<CardGallery cards={cards} onClick={onClick} />);
-    wrapper.childAt(0).simulate('click');
+    wrapper.childAt(0).find('CardGalleryItem').simulate('click');
     expect(onClick.calledOnce).to.equal(true);
   }); 
 });
